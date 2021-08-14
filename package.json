@@ -1,0 +1,23 @@
+{
+  "name": "devo",
+  "version": "1.0.0",
+  "description": "![Devo](https://user-images.githubusercontent.com/80943/129457720-fcc3f361-4fe3-4b10-90f0-e157ba38a928.png) # devo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamp/devo.git"
+  },
+  "author": "lamp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamp/devo/issues"
+  },
+  "homepage": "https://github.com/lamp/devo#readme",
+  "dependencies": {
+    "ink": "^3.0.9",
+    "shelljs": "^0.8.4"
+  }
+}
