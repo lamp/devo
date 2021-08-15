@@ -1,19 +1,21 @@
 (ns devo
   (:require ["ink" :as i]
+            ["ink-select-input" :refer [default]
+                                :rename {default SelectInput}]
             ["shelljs" :as sh]
             [reagent.core :as r]
             [promesa.core :as p]))
-
 
 (def workflows
   {"evs" []
    "web" []
    "shopify" []})
 
+(defn handler [_])
 
 (defn selector []
-  [:> i/Box {:width 8 :flex-direction "column"}
-   (map (fn [t] [:> i/Text {:color "red" :key t} t]) (keys workflows))])
+  (let [items (map (fn [t] {:label t :value t}) (keys workflows))]
+    [:> i/Box {:width 8 :flex-direction "column"}
+       [:> SelectInput {:on-select handler :items items}]]))
 
-(let [{waitUntilExit :witUntilExit} (i/render (r/as-element [selector]))]
-  (waitUntilExit))
+(i/render (r/as-element [selector]))
